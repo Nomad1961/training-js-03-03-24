@@ -150,25 +150,33 @@
 // console.log(message);
 // ++++++++++++++++++++++++++++++Блочная область видимости переменных++++++++++++++++++++++
 
-const c = 15;
+// const c = 15;
 
-if (true) {
-  const a = 5;
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// if (true) {
+//   const a = 5;
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
 
-if (true) {
-  const b = 10;
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// if (true) {
+//   const b = 10;
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
 
-if (true) {
-  const c = 15;
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// if (true) {
+//   const c = 15;
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// console.log(null || (2 && 3) || 4);
+// console.log((1 && null && 2) > 0);
+// console.log(true && 0 && 'kiwi');
+
+// console.log(!5);
+// console.log(!false);
+Boolean(5);
