@@ -40,3 +40,4 @@ inputEl.addEventListener('blur', event => {
   result = `${capitalFirstLetter}${inputValue.slace(1)}`;
   console.log('result', result);
 });
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
