@@ -207,24 +207,24 @@
 // // Пример вызова openAboutPage с параметром языка
 // openAboutPage('ru-RU');
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-import { window } from '@tauri-apps/api/window'; // Обратите внимание на исправленный импорт
+// import { window } from '@tauri-apps/api/window'; // Обратите внимание на исправленный импорт
 
-async function openAboutPage(language) {
-  const { WebviewWindow } = window;
-  const webview = new WebviewWindow('about_window', {
-    title: 'About',
-    width: 400,
-    height: 200,
-    url: '/about',
-  });
-  webview.once('tauri://created', function () {});
-  webview.once('tauri://error', function (e) {
-    console.error(e);
-  });
+// async function openAboutPage(language) {
+//   const { WebviewWindow } = window;
+//   const webview = new WebviewWindow('about_window', {
+//     title: 'About',
+//     width: 400,
+//     height: 200,
+//     url: '/about',
+//   });
+//   webview.once('tauri://created', function () {});
+//   webview.once('tauri://error', function (e) {
+//     console.error(e);
+//   });
 
-  const keyboardLanguage = getKeyboardLayoutLanguage(language);
-  console.log('Язык раскладки клавиатуры пользователя: ' + keyboardLanguage);
-}
+//   const keyboardLanguage = getKeyboardLayoutLanguage(language);
+//   console.log('Язык раскладки клавиатуры пользователя: ' + keyboardLanguage);
+// }
 
-// Пример вызова openAboutPage с параметром языка
-openAboutPage('ru-RU');
+// // Пример вызова openAboutPage с параметром языка
+// openAboutPage('ru-RU');

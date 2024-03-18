@@ -1,56 +1,89 @@
 // +++++++++++++++task-01++++++++++++++++++++++++++++++++++++++++++
-const categoriesList = document.getElementById('categories'); // отримання елементу ul#categories
-let categoryCount = 0; // змінна для рахунку категорій
-let subCategoryCounts = []; // масив для зберігання кількостей підкатегорій
+// const categoriesList = document.getElementById('categories'); // отримання елементу ul#categories
+// let categoryCount = 0; // змінна для рахунку категорій
+// let subCategoryCounts = []; // масив для зберігання кількостей підкатегорій
 
-// проходимось по кожен li.item у sписку ul#categories
-for (const item of categoriesList.querySelectorAll('.item')) {
-  const h2Element = item.querySelector('h2'); // отримуємо заголовок категорії
-  let subCategoryCount = item.querySelectorAll('li').length; // кількість елементів li у цій категорії
+// // проходимось по кожен li.item у sписку ul#categories
+// for (const item of categoriesList.querySelectorAll('.item')) {
+//   const h2Element = item.querySelector('h2'); // отримуємо заголовок категорії
+//   let subCategoryCount = item.querySelectorAll('li').length; // кількість елементів li у цій категорії
 
-  console.log(
-    `Категорія "${h2Element.textContent}" має ${subCategoryCount} підкатегорій`
-  );
+//   console.log(
+//     `Категорія "${h2Element.textContent}" має ${subCategoryCount} підкатегорій`
+//   );
 
-  // оновлення статистики
-  categoryCount++;
-  subCategoryCounts.push(subCategoryCount);
-}
+//   // оновлення статистики
+//   categoryCount++;
+//   subCategoryCounts.push(subCategoryCount);
+// }
 
-console.log(`Загалом є ${categoryCount} категорій:`);
-console.table([...subCategoryCounts]); // відображення результатів у форматі таблиці
+// console.log(`Загалом є ${categoryCount} категорій:`);
+// console.table([...subCategoryCounts]); // відображення результатів у форматі таблиці
 // ++++++++++++++++++end-task-01+++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++task-02+++++++++++++++++++++++++++++++++++++++++
-const images = [
-  {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
-  },
-  {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
-  },
-  {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
-  },
-];
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
 
-const gallery = document.querySelector('.gallery');
+// const gallery = document.querySelector('.gallery');
 
-const fragment = document.createDocumentFragment();
+// const fragment = document.createDocumentFragment();
 
-images.forEach(image => {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
+// images.forEach(image => {
+//   const li = document.createElement('li');
+//   const img = document.createElement('img');
 
-  img.src = image.url;
-  img.alt = image.alt;
+//   img.src = image.url;
+//   img.alt = image.alt;
 
-  li.appendChild(img);
-  fragment.appendChild(li);
-});
+//   li.appendChild(img);
+//   fragment.appendChild(li);
+// });
 
-gallery.appendChild(fragment);
+// gallery.appendChild(fragment);
 // +++++++++++++++++++++end-task-02+++++++++++++++++++++++++++++++++++++
+
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
+
+// const gallery = document.querySelector('.gallery');
+
+// const fragment = document.createDocumentFragment();
+
+// images.forEach(image => {
+//   const li = document.createElement('li');
+//   const img = document.createElement('img');
+
+//   img.src = image.url;
+//   img.alt = image.alt;
+
+//   li.appendChild(img);
+//   fragment.appendChild(li);
+// });
+
+// document.querySelector('.gallery').appendChild(fragment);
+
 // +++++++++++++++++++==task-03+++++++++++++++++++++++++++++++++++++++++
