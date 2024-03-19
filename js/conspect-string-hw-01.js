@@ -388,7 +388,7 @@
 
 // const result = multiply(2, 3, 5);
 // console.log(result); // 30
-// """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// """"""""""""""""""""""""Порядок ввыполнения кода+++++++++++++++++++++++
 // console.log('A');
 
 // function logStuff() {
@@ -400,15 +400,53 @@
 // logStuff();
 
 // console.log('D');
-// LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
-function foo() {
-  // Локальная переменная
-  const value = "I'm a local variable";
-  // Можно обратиться к локальной переменной
-  console.log(value); // "I'm a local variable"
-}
+// LLLLLLLLLLLLLLLLLLLLLLLLLLОбласть аидимости функции+++++++++++++++++++++
+// function foo() {
+//   // Локальная переменная
+//   const value = "I'm a local variable";
+//   // Можно обратиться к локальной переменной
+//   console.log(value); // "I'm a local variable"
+// }
 
-foo();
-console.log(value); // ReferenceError: value is not defined
-// Ошибка: локальная переменная не видна за пределами
-функции;
+// foo();
+// console.log(value); // ReferenceError: value is not defined
+// // Ошибка: локальная переменная не видна за пределами
+// функции;
+
+// +++++++++++++++++
+
+// function makeMessage(name, price) {
+//   return `You picked ${name}, price per item is ${price} credits`;
+// }
+
+// console.log(makeMessage('Radar', 6150));
+// console.log(makeMessage('Scanner', 3500));
+// console.log(makeMessage('Reactor', 8000));
+// console.log(makeMessage('Engine', 4070));
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function calculateTotalPrice(orderedQuantity, pricePerItem);
+// {
+//   return multiply = orderedQuantity * pricePerItem;
+// }
+// console.log(multiplay(5, 100));
+// console.log(multiplay(8, 60));
+// console.log(multiplay(3, 400));
+// console.log(multiplay(1, 3500));
+// console.log(multiplay(12, 70));
+// Ошибки в предоставленном коде:
+// Опечатка в названии функции:
+// Вместо multiplay должно быть calculateTotalPrice, так как это название функции, которую вы определили.
+// Неправильное использование оператора присваивания в return:
+// В строке return multiply = orderedQuantity * pricePerItem; оператор присваивания = не нужен. Вместо этого нужно просто вернуть результат умножения orderedQuantity * pricePerItem.
+// Вызов несуществующей функции:
+// Вместо console.log(multiplay(...)); нужно использовать console.log(calculateTotalPrice(...));, так как это название вашей функции.
+// +++++++++++++++++++++++++++++++++++++++++++++
+// function calculateTotalPrice(orderedQuantity, pricePerItem) {
+//   return orderedQuantity * pricePerItem;
+// }
+
+// console.log(calculateTotalPrice(5, 100));
+// console.log(calculateTotalPrice(8, 60));
+// console.log(calculateTotalPrice(3, 400));
+// console.log(calculateTotalPrice(1, 3500));
+// console.log(calculateTotalPrice(12, 70));
