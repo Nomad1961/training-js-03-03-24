@@ -384,11 +384,70 @@
 // _________________КОНЕЦ ВАРИАНТОВ РЕШЕНИЯ ОДНОЙ ЗАДАЧИ_________________________________________
 
 // ---------------------------INCLUDES-----------------------------------------------------------
-const message = 'Please buy our stuff!';
-const hasSpam = message.includes('buy');
+// const message = 'Please buy our stuff!';
+// const hasSpam = message.includes('buy');
 
-if (hasSpam) {
-  console.log('Warning: This message contains forbidden words.');
-} else {
-  console.log('You can safely open this message.');
+// if (hasSpam) {
+//   console.log('Warning: This message contains forbidden words.');
+// } else {
+//   console.log('You can safely open this message.');
+// }
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function checkForName(fullName, firstName) {
+//   const fullNameLower = fullName.toLowerCase();
+//   const firstNameLower = firstName.toLowerCase();
+
+//   return fullNameLower.includes(firstNameLower);
+// }
+// console.log(checkForName('Jason Neis', 'Jason'));
+// console.log(checkForName('Jason Neis', 'jAsOn'));
+// console.log(checkForName('Jason Neis', 'Jacob'));
+// console.log(checkForName('Caty Stars', 'Caty'));
+// console.log(checkForName('Caty Stars', 'cAtY'));
+// console.log(checkForName('Caty Stars', 'Andromeda'));
+//
+// +++==  startsWith endWith  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function checkFileExtension(fileName, ext) {
+//   if (fileName.endsWith(ext)) {
+//     return 'File extension matches';
+//   } else {
+//     return 'File extension does not match';
+//   }
+// }
+// console.log(checkFileExtension('styles.css', '.css'));
+// console.log(checkFileExtension('styles.css', '.js'));
+// console.log(checkFileExtension('app.js', '.js'));
+// console.log(checkFileExtension('app.js', '.html'));
+// console.log(checkFileExtension('index.html', '.html'));
+// console.log(checkFileExtension('index.html', '.css'));
+// console.log(checkFileExtension('styles.css', '.js'));
+
+// =======   indexOf  ==========================================================================
+
+// const message = 'Welcome to Bahamas!';
+// const index = message.indexOf('to');
+// console.log(index); // 8
+
+// const message = 'Welcome to Bahamas!';
+// const index = message.indexOf('hello');
+// console.log(index); // -1
+// ------------------------------------------------
+function getFileName(file) {
+  let dotIndex = file.indexOf('.');
+  if (dotIndex === -1) {
+    return file;
+  } else {
+    return file.slice(0, dotIndex);
+  }
 }
+
+// Примеры вызова функции
+console.log(getFileName('styles.css')); // Возвращает "styles"
+console.log(getFileName('app.js')); // Возвращает "app"
+console.log(getFileName('app')); // Возвращает "app"
+console.log(getFileName('index.js')); // Возвращает "index"
+console.log(getFileName('index.html')); // Возвращает "index"
+console.log(getFileName('index.css')); // Возвращает "index"
+console.log(getFileName('index')); // Возвращает "index"
+// YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
