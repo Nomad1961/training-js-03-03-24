@@ -433,21 +433,21 @@
 // const index = message.indexOf('hello');
 // console.log(index); // -1
 // ------------------------------------------------
-function getFileName(file) {
-  let dotIndex = file.indexOf('.');
-  if (dotIndex === -1) {
-    return file;
-  } else {
-    return file.slice(0, dotIndex);
-  }
-}
+// function getFileName(file) {
+//   let dotIndex = file.indexOf('.');
+//   if (dotIndex === -1) {
+//     return file;
+//   } else {
+//     return file.slice(0, dotIndex);
+//   }
+// }
 
-// Примеры вызова функции
-console.log(getFileName('styles.css')); // Возвращает "styles"
-console.log(getFileName('app.js')); // Возвращает "app"
-console.log(getFileName('app')); // Возвращает "app"
-console.log(getFileName('index.js')); // Возвращает "index"
-console.log(getFileName('index.html')); // Возвращает "index"
-console.log(getFileName('index.css')); // Возвращает "index"
-console.log(getFileName('index')); // Возвращает "index"
+// // Примеры вызова функции
+// console.log(getFileName('styles.css')); // Возвращает "styles"
+// console.log(getFileName('app.js')); // Возвращает "app"
+// console.log(getFileName('app')); // Возвращает "app"
+// console.log(getFileName('index.js')); // Возвращает "index"
+// console.log(getFileName('index.html')); // Возвращает "index"
+// console.log(getFileName('index.css')); // Возвращает "index"
+// console.log(getFileName('index')); // Возвращает "index"
 // YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY

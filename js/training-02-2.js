@@ -321,14 +321,14 @@
 // }
 // caunter(10, 20);
 
-function caunter(number) {
-  const a = 100;
-  const b = 20;
-  for (let i = b; i <= a; i++) {
-    if (i % 5 === 0) {
-      number = i;
-      return number;
-      console.log(10);
-    }
-  }
-}
+// function caunter(number) {
+//   const a = 100;
+//   const b = 20;
+//   for (let i = b; i <= a; i++) {
+//     if (i % 5 === 0) {
+//       number = i;
+//       return number;
+//       console.log(10);
+//     }
+//   }
+// }

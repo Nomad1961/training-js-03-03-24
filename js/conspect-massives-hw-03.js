@@ -253,82 +253,82 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++++++++Пример на нижний и верхний регистр++++++++++++++++++++++++++++++++++++++++++
-function checkStorage(storage, item) {
-  const itemToLower = item.toLowerCase();
-  for (const itemInStorage of storage) {
-    if (itemInStorage.toLowerCase() === itemToLower) {
-      return `${item} is available to order!`;
-    }
-  }
-  return 'Sorry! We are out of stock!';
-}
+// function checkStorage(storage, item) {
+//   const itemToLower = item.toLowerCase();
+//   for (const itemInStorage of storage) {
+//     if (itemInStorage.toLowerCase() === itemToLower) {
+//       return `${item} is available to order!`;
+//     }
+//   }
+//   return 'Sorry! We are out of stock!';
+// }
 
-console.log(checkStorage(['apple', 'plum', 'pear'], 'plum')); // "plum is available to order!"
-console.log(checkStorage(['apple', 'plum', 'pear'], 'pLuM')); // "plum is available to order!"
-console.log(checkStorage(['apple', 'plum', 'pear'], 'pear')); // "pear is available to order!"
-console.log(checkStorage(['apple', 'plum', 'pear'], 'pEAr')); // "pear is available to order!"
-console.log(checkStorage(['apple', 'plum', 'pear'], 'orange')); // "Sorry! We are out of stock!"
-console.log(checkStorage(['apple', 'plum', 'pear'], 'carrot')); // "Sorry! We are out of stock!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'plum')); // "plum is available to order!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'pLuM')); // "plum is available to order!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'pear')); // "pear is available to order!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'pEAr')); // "pear is available to order!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'orange')); // "Sorry! We are out of stock!"
+// console.log(checkStorage(['apple', 'plum', 'pear'], 'carrot')); // "Sorry! We are out of stock!"
 
-// ++++++++++++++++++++++Общие элементы++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function getCommonElements(array1, array2) {
-  let commonElements = [];
+// // ++++++++++++++++++++++Общие элементы++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getCommonElements(array1, array2) {
+//   let commonElements = [];
 
-  for (let element of array1) {
-    if (array2.includes(element)) {
-      commonElements.push(element);
-    }
-  }
+//   for (let element of array1) {
+//     if (array2.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   }
 
-  return commonElements;
-}
+//   return commonElements;
+// }
 
-// Перевірка роботи функції з вказаними прикладами
-console.log(getCommonElements([1, 2, 3], [2, 4])); // Виведе: [2]
-console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // Виведе: [1, 2]
-console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // Виведе: [12, 27, 3]
-console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // Виведе: [10, 30, 40]
-console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // Виведе: []
+// // Перевірка роботи функції з вказаними прикладами
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // Виведе: [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // Виведе: [1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // Виведе: [12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // Виведе: [10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // Виведе: []
 
-// +++++++++ Доповни код функції calculateTotalPrice(order) так, щоб вона повертала загальну суму чисел в масиві order. Використай цикл for...of для перебору масиву
+// // +++++++++ Доповни код функції calculateTotalPrice(order) так, щоб вона повертала загальну суму чисел в масиві order. Використай цикл for...of для перебору масиву
 
-function calculateTotalPrice(order) {
-  let total = 0;
-  for (const item of order) {
-    total += item;
-  }
-  return total;
-}
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (const item of order) {
+//     total += item;
+//   }
+//   return total;
+// }
 
-console.log(calculateTotalPrice([12, 85, 37, 4])); // Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
-console.log(calculateTotalPrice([164, 48, 291])); // Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
-console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
-console.log(calculateTotalPrice([])); // Виклик функції calculateTotalPrice([]) повертає 0
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+// console.log(calculateTotalPrice([164, 48, 291])); // Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+// console.log(calculateTotalPrice([])); // Виклик функції calculateTotalPrice([]) повертає 0
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// +++ Функція createReversedArray() може приймати довільну кількість аргументів. Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку. Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1]
-function createReversedArray(...args) {
-  return args.reverse();
-}
+// // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // +++ Функція createReversedArray() може приймати довільну кількість аргументів. Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку. Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1]
+// function createReversedArray(...args) {
+//   return args.reverse();
+// }
 
-console.log(createReversedArray(12, 85, 37, 4)); // Виведе [4, 37, 85, 12]
-console.log(createReversedArray(164, 48, 291)); // Виведе [291, 48, 164]
-console.log(createReversedArray(412, 371, 94, 63, 176)); // Виведе [176, 63, 94, 371, 412]
-console.log(createReversedArray()); // Виведе []
+// console.log(createReversedArray(12, 85, 37, 4)); // Виведе [4, 37, 85, 12]
+// console.log(createReversedArray(164, 48, 291)); // Виведе [291, 48, 164]
+// console.log(createReversedArray(412, 371, 94, 63, 176)); // Виведе [176, 63, 94, 371, 412]
+// console.log(createReversedArray()); // Виведе []
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// +++++Функція calculateTax(amount, taxRate) оголошує два параметри:
-// amount - число, сума від якої потрібно обчислити податок. Обов'язковий параметр.
-// taxRate - число, податкова ставка. Необов'язковий параметр. За замовчуванням його значення має бути 0.2.
-// Доповни код функції так, щоб вона повертала суму податку - результат множення суми на податкову ставку.
+// // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // +++++Функція calculateTax(amount, taxRate) оголошує два параметри:
+// // amount - число, сума від якої потрібно обчислити податок. Обов'язковий параметр.
+// // taxRate - число, податкова ставка. Необов'язковий параметр. За замовчуванням його значення має бути 0.2.
+// // Доповни код функції так, щоб вона повертала суму податку - результат множення суми на податкову ставку.
 
-function calculateTax(amount, taxRate = 0.2) {
-  return amount * taxRate;
-}
+// function calculateTax(amount, taxRate = 0.2) {
+//   return amount * taxRate;
+// }
 
-console.log(calculateTax(100, 0.1)); // 10
-console.log(calculateTax(200, 0.1)); // 20
-console.log(calculateTax(100, 0.2)); // 20
-console.log(calculateTax(200, 0.2)); // 40
+// console.log(calculateTax(100, 0.1)); // 10
+// console.log(calculateTax(200, 0.1)); // 20
+// console.log(calculateTax(100, 0.2)); // 20
+// console.log(calculateTax(200, 0.2)); // 40
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

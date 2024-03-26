@@ -87,3 +87,18 @@
 // document.querySelector('.gallery').appendChild(fragment);
 
 // +++++++++++++++++++==task-03+++++++++++++++++++++++++++++++++++++++++
+
+// шшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшшш
+// ============ (23 03 24) ЗАДАНИЕ 1 ВЕРСИЯ  ОТ 23 03 24------------------РАБОТАЕТ---------------------------------------
+// const categoriesList = document.querySelectorAll('#categories .item');
+
+// console.log(`У списку ${categoriesList.length} категорій:`);
+
+// categoriesList.forEach(category => {
+//   const categoryName = category.querySelector('h2').textContent;
+//   const categoryItemsCount = category.querySelectorAll('ul li').length;
+
+//   console.log(`- Категорія: ${categoryName}`);
+//   console.log(`- Кількість елементів: ${categoryItemsCount}`);
+// });
+// ===================== ЗАДАНИЕ 2 ==================================================================================
