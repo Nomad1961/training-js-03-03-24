@@ -486,3 +486,415 @@ input document.querySelector('[data-create]').click();
 document.querySelector('[data-create]').click();
 
 // Click Destroy document.querySelector('[data-destroy]').click(); -->
+
+<!-- HW-09 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK -->
+<!-- task-1 -->
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleLightbox Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="gallery"></ul>
+    <script src="1-gallery.js"></script>
+</body>
+</html>
+<!-- --------------------------------------- -->
+javascript
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+const images = [ { small: "small-image1.jpg", large: "large-image1.jpg",
+description: "Image 1 description" }, { small: "small-image2.jpg", large:
+"large-image2.jpg", description: "Image 2 description" }, { small:
+"small-image3.jpg", large: "large-image3.jpg", description: "Image 3
+description" } ];
+
+const gallery = document.querySelector('.gallery');
+
+images.forEach(image => { const galleryItem = document.createElement('li');
+galleryItem.classList.add('gallery-item');
+
+    const galleryLink = document.createElement('a');
+    galleryLink.classList.add('gallery-link');
+    galleryLink.href = image.large;
+
+    const galleryImage = document.createElement('img');
+    galleryImage.classList.add('gallery-image');
+    galleryImage.src = image.small;
+    galleryImage.alt = image.description;
+
+    galleryLink.appendChild(galleryImage);
+    galleryItem.appendChild(galleryLink);
+    gallery.appendChild(galleryItem);
+
+});
+
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt',
+captionDelay: 250 });
+
+Код включает в себя создание HTML-структуры галереи с использованием шаблона,
+добавление библиотеки SimpleLightbox через npm, инициализацию галереи с
+динамическими данными в JavaScript, стилизацию галереи с помощью CSS. При клике
+на изображение открывается модальное окно с увеличенной версией изображения и
+подписью из атрибута alt, которая появляется через 250 миллисекунд после
+открытия модального окна.
+
+<!-- ------------------------------ -->
+
+css /_ Add your gallery styling here _/ .gallery { display: flex; flex-wrap:
+wrap; list-style: none; padding: 0; }
+
+.gallery-item { margin: 10px; }
+
+.gallery-link { text-decoration: none; color: inherit; }
+
+.gallery-image { width: 200px; height: 200px; object-fit: cover; border-radius:
+5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+
+<!-- task-2 -->
+
+html
+
+<!-- 2-form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<style>
+  /* Add your CSS styling here */
+</style>
+</head>
+<body>
+<form class="feedback-form" autocomplete="off">
+  <label>
+    Email
+    <input type="email" name="email" autofocus />
+  </label>
+  <label>
+    Message
+    <textarea name="message" rows="8"></textarea>
+  </label>
+  <button type="submit">Submit</button>
+</form>
+<script src="2-form.js"></script>
+</body>
+</html>
+
+javascript // 2-form.js document.addEventListener('DOMContentLoaded', function()
+{ const form = document.querySelector('.feedback-form');
+
+form.addEventListener('input', function(event) { const formData = { email:
+form.elements.email.value.trim(), message: form.elements.message.value.trim() };
+
+    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+
+});
+
+window.addEventListener('load', function() { const savedData =
+localStorage.getItem('feedback-form-state');
+
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      form.elements.email.value = parsedData.email;
+      form.elements.message.value = parsedData.message;
+    }
+
+});
+
+form.addEventListener('submit', function(event) { event.preventDefault();
+
+    const emailValue = form.elements.email.value.trim();
+    const messageValue = form.elements.message.value.trim();
+
+    if (emailValue && messageValue) {
+      console.log({ email: emailValue, message: messageValue });
+
+      localStorage.removeItem('feedback-form-state');
+      form.reset();
+    } else {
+      alert('Please fill in all fields before submitting.');
+    }
+
+}); });
+
+Пояснення коду: HTML (2-form.html): Створює форму з полями для введення Email та
+повідомлення. Додає кнопку для відправки форми. Підключає зовнішній JavaScript
+файл 2-form.js. JavaScript (2-form.js): Використовує делегування подій для
+відстеження введення користувачем даних у форму. Зберігає значення полів у
+локальне сховище під ключем "feedback-form-state". При завантаженні сторінки
+перевіряє наявність збережених даних та заповнює поля форми. При сабміті форми
+перевіряє заповненість полів, виводить дані у консоль, очищає сховище та поля
+форми.
+
+<!-- SimpleLightBox------------------- -->
+
+Answer Для импортирования изображений в коде, который вы предоставили,
+изображения должны быть доступны по указанным путям small-image1.jpg,
+small-image2.jpg, small-image3.jpg для маленьких изображений и large-image1.jpg,
+large-image2.jpg, large-image3.jpg для больших изображений. Эти изображения
+должны быть расположены в тех же директориях, где находится ваш скрипт
+JavaScript. При загрузке страницы скрипт будет использовать указанные пути к
+изображениям для создания галереи изображений с подписями и отображения их в
+модальном окне с помощью SimpleLightbox. Вопрос. В начале этого кода упоминается
+код import SimpleLightbox from 'simplelightbox'; import
+'simplelightbox/dist/simple-lightbox.min.css'; это галерея из которой надо
+скачать изображения? Если да, то напиши код или прояснение как это сделать.
+Answer Как скачать изображения из галереи SimpleLightbox Для использования
+галереи SimpleLightbox в вашем проекте и загрузки изображений из нее, вам
+необходимо сначала установить SimpleLightbox с помощью npm (Node Package
+Manager). Установите SimpleLightbox: bash npm install simplelightbox
+
+После установки SimpleLightbox, вы можете использовать его в своем проекте,
+импортировав его в вашем JavaScript файле: javascript import SimpleLightbox from
+'simplelightbox'; import 'simplelightbox/dist/simple-lightbox.min.css';
+
+Для загрузки изображений из галереи, вам нужно создать объект SimpleLightbox и
+указать селектор, по которому будет инициализироваться галерея. В вашем случае,
+это: javascript const lightbox = new SimpleLightbox('.gallery a', {
+captionsData: 'alt', captionDelay: 250, });
+
+После инициализации галереи, вы можете открыть изображения в модальном окне и
+просматривать их. Если вам нужно скачать изображения из галереи, обычно в
+галерее SimpleLightbox есть соответствующая функциональность, например,
+контекстное меню или кнопка для загрузки изображения. Следуйте инструкциям,
+предоставленным в документации SimpleLightbox или проверьте наличие функционала
+загрузки изображений в документации или примерах использования библиотеки.
+Смотри принт+++++++++++++++++++!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<!-- IIIIIIIIIIIIIIIIIIIIIIII  HW-10  TASK-1   ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+Answer HTML (1-timer.html) html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="izitoast/dist/css/iziToast.min.css">
+</head>
+<body>
+  <input type="text" id="datetime-picker" />
+  <button type="button" id="start-btn" disabled>Start</button>
+
+  <div class="timer">
+    <div class="field">
+      <span class="value" data-days>00</span>
+      <span class="label">Days</span>
+    </div>
+    <div class="field">
+      <span class="value" data-hours>00</span>
+      <span class="label">Hours</span>
+    </div>
+    <div class="field">
+      <span class="value" data-minutes>00</span>
+      <span class="label">Minutes</span>
+    </div>
+    <div class="field">
+      <span class="value" data-seconds>00</span>
+      <span class="label">Seconds</span>
+    </div>
+  </div>
+
+  <script src="flatpickr/dist/flatpickr.js"></script>
+  <script src="iziToast/dist/js/iziToast.min.js"></script>
+  <script src="1-timer.js"></script>
+</body>
+</html>
+
+JavaScript (1-timer.js) javascript import flatpickr from "flatpickr"; import
+"flatpickr/dist/flatpickr.min.css"; import iziToast from "izitoast"; import
+"izitoast/dist/css/iziToast.min.css";
+
+const datetimePicker = document.getElementById('datetime-picker'); const
+startBtn = document.getElementById('start-btn'); const daysValue =
+document.querySelector('[data-days]'); const hoursValue =
+document.querySelector('[data-hours]'); const minutesValue =
+document.querySelector('[data-minutes]'); const secondsValue =
+document.querySelector('[data-seconds]');
+
+let userSelectedDate;
+
+const options = { enableTime: true, time_24hr: true, defaultDate: new Date(),
+minuteIncrement: 1, onClose(selectedDates) { userSelectedDate =
+selectedDates[0]; if (userSelectedDate < new Date()) { iziToast.error({ title:
+'Error', message: 'Please choose a date in the future', }); startBtn.disabled =
+true; } else { startBtn.disabled = false; } }, };
+
+flatpickr(datetimePicker, options);
+
+startBtn.addEventListener('click', () => { startBtn.disabled = true;
+datetimePicker.disabled = true;
+
+const countdown = setInterval(() => { const ms = userSelectedDate - new Date();
+if (ms <= 0) { clearInterval(countdown); daysValue.textContent = '00';
+hoursValue.textContent = '00'; minutesValue.textContent = '00';
+secondsValue.textContent = '00'; iziToast.success({ title: 'Countdown Finished',
+message: 'Countdown timer has ended!', }); } else { const { days, hours,
+minutes, seconds } = convertMs(ms); daysValue.textContent =
+addLeadingZero(days); hoursValue.textContent = addLeadingZero(hours);
+minutesValue.textContent = addLeadingZero(minutes); secondsValue.textContent =
+addLeadingZero(seconds); } }, 1000); });
+
+function convertMs(ms) { const second = 1000; const minute = second _ 60; const
+hour = minute _ 60; const day = hour \* 24;
+
+const days = Math.floor(ms / day); const hours = Math.floor((ms % day) / hour);
+const minutes = Math.floor(((ms % day) % hour) / minute); const seconds =
+Math.floor((((ms % day) % hour) % minute) / second);
+
+return { days, hours, minutes, seconds }; }
+
+function addLeadingZero(value) { return String(value).padStart(2, '0'); }
+
+Этот код решает задачу создания таймера обратного отсчета с использованием
+библиотеки flatpickr для выбора даты и времени, а также библиотеки iziToast для
+отображения сообщений пользователю. При выборе даты в прошлом кнопка "Start"
+становится неактивной и выводится сообщение об ошибке. При выборе даты в будущем
+кнопка "Start" становится активной. После нажатия на кнопку "Start" начинается
+отсчет времени до выбранной даты, который обновляется каждую секунду. Таймер
+останавливается, когда достигнута конечная дата. В интерфейсе таймера значения
+времени форматируются с добавлением ведущего нуля, если число меньше двух
+символов.
+
+<!--    HW-10   TASK-2============================================== -->
+
+Answer html
+
+<!-- 2-snackbar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snackbar Generator</title>
+  <link rel="stylesheet" href="izitoast/dist/css/iziToast.min.css">
+</head>
+<body>
+  <form class="form">
+    <label>
+      Delay (ms)
+      <input type="number" name="delay" required />
+    </label>
+
+    <fieldset>
+      <legend>State</legend>
+      <label>
+        <input type="radio" name="state" value="fulfilled" required />
+        Fulfilled
+      </label>
+      <label>
+        <input type="radio" name="state" value="rejected" required />
+        Rejected
+      </label>
+    </fieldset>
+
+    <button type="submit">Create notification</button>
+
+  </form>
+
+  <script src="2-snackbar.js"></script>
+</body>
+</html>
+
+javascript // 2-snackbar.js import iziToast from "izitoast";
+
+document.querySelector('.form').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const delay = document.querySelector('input[name="delay"]').value; const state =
+document.querySelector('input[name="state"]:checked').value;
+
+const promise = new Promise((resolve, reject) => { if (state === 'fulfilled') {
+setTimeout(() => resolve(delay), delay); } else { setTimeout(() =>
+reject(delay), delay); } });
+
+promise.then((value) => { iziToast.success({ title: 'Success', message:
+`✅ Fulfilled promise in ${value}ms` }); }).catch((value) => { iziToast.error({
+title: 'Error', message: `❌ Rejected promise in ${value}ms` }); }); });
+
+Пояснення коду: У файлі HTML ми створюємо форму з полями для введення значення
+затримки та вибору стану промісу. Підключаємо стилі бібліотеки iziToast. У файлі
+JavaScript відслідковуємо подію submit форми. Отримуємо значення з поля вводу та
+вибраного стану. Створюємо проміс, який виконується або відхиляється після
+вказаної затримки. Обробляємо результат промісу: якщо виконується - виводимо
+повідомлення про успіх, якщо відхиляється - про помилку. Використовуємо
+бібліотеку iziToast для відображення повідомлень замість console.log().
+
+<!-- +++++++++++  HW 10 TASK-1  VERSION 2 -->
+
+Answer The sources provided offer detailed information on using Flatpickr, a
+lightweight and powerful datetime picker library. To create a countdown timer to
+a specific date using Flatpickr, you need to follow these steps: HTML Markup:
+Add the necessary HTML elements for the timer, date selection field, and start
+button. Use the Flatpickr library to allow cross-browser selection of the end
+date and time in a single interface element. html
+<input type="text" id="datetime-picker" />
+<button type="button" data-start>Start</button>
+
+<div class="timer">
+  <!-- Fields to display days, hours, minutes, and seconds -->
+</div>
+
+Flatpickr Initialization: Initialize Flatpickr on the input element with the
+necessary options, such as enabling time selection and setting the default date.
+javascript import flatpickr from "flatpickr"; import
+"flatpickr/dist/flatpickr.min.css";
+
+const options = { enableTime: true, time_24hr: true, defaultDate: new Date(),
+minuteIncrement: 1, onClose(selectedDates) { console.log(selectedDates[0]); },
+};
+
+flatpickr("#datetime-picker", options);
+
+Countdown Logic: Calculate the time remaining until the selected date using the
+convertMs function. Update the timer interface every second to display the
+remaining days, hours, minutes, and seconds. javascript function convertMs(ms) {
+// Calculation of days, hours, minutes, and seconds return { days, hours,
+minutes, seconds }; }
+
+// Update the timer interface every second setInterval(() => { // Calculate time
+remaining and update the display }, 1000);
+
+Formatting Time: Ensure that the displayed time values have leading zeros if
+they are less than two digits. javascript function addLeadingZero(value) {
+return value.toString().padStart(2, '0'); }
+
+Displaying Messages: Instead of using window.alert(), utilize the iziToast
+library for displaying user messages. javascript import iziToast from
+"izitoast"; import "izitoast/dist/css/iziToast.min.css";
+
+By following these steps and incorporating the provided code snippets, you can
+create a countdown timer using Flatpickr with the necessary functionalities like
+date selection, countdown logic, and user message display.
+
+<!-- TASK-2 additional code -->
+
+javascript import iziToast from "izitoast"; import
+"izitoast/dist/css/iziToast.min.css";
+
+document.querySelector('.form').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const delayInput = document.querySelector('input[name="delay"]'); const delay =
+parseInt(delayInput.value);
+
+const state = document.querySelector('input[name="state"]:checked').value;
+
+const promise = new Promise((resolve, reject) => { if (state === 'fulfilled') {
+setTimeout(() => resolve(delay), delay); } else { setTimeout(() =>
+reject(delay), delay); } });
+
+promise.then((value) => { iziToast.success({ title: 'Success', message:
+`✅ Fulfilled promise in ${value}ms` }); }).catch((value) => { iziToast.error({
+title: 'Error', message: `❌ Rejected promise in ${value}ms` }); }); });
