@@ -1,0 +1,18 @@
+[
+  {
+    "key": "ctrl+l",
+    "command": "type",
+    "args": {
+      "text": "console.log($1)$0"
+    },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "console.log('${TM_SELECTED_TEXT}');"
+    }
+  }
+]
